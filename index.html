@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Note Maker</title>
+</head>
+<body class="d-flex">
+    <div 
+        class="d-flex align-items-center col-md-6 align-middle" 
+        style="height: 100vh;">
+        <div 
+            class="row container m-2">
+            <form 
+                id="task-form" 
+                class="p-3 bg-light rounded form-text border border-secondary"
+                >
+                <div class="mb-3">
+                    <input 
+                        type="text" 
+                        id="task-title" 
+                        placeholder="Task title" 
+                        class="form-control"
+                        autofocus
+                    >
+                </div>
+                <div class="mb-3">
+                    <textarea 
+                        id="task-description"
+                        rows="3"
+                        placeholder="Task description" 
+                        class="form-control"
+                    ></textarea>
+                </div>
+                <div class="row">
+                    <div class="d-flex">
+                        <button 
+                            id="saveButton" 
+                            class="btn btn-primary flex-fill border border-2 border-light">Save
+                        </button>
+                        <button 
+                            id="deleteButton" 
+                            class="btn btn-secondary flex-fill border border-2 border-light">Delete
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container col-md-6 p-5" id="tasks-container" style="max-height: 100vh; overflow-y: auto;">
+
+    </div>
+
+<!--------------------------------------------Scripts--------------------------------------------------->
+
+    <!-- Bootstrap script -->
+    <script src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCutx74BAIpI0TA6VfkZfGb3_9SIR9FKFw",
+        authDomain: "notemaker-ef085.firebaseapp.com",
+        projectId: "notemaker-ef085",
+        storageBucket: "notemaker-ef085.appspot.com",
+        messagingSenderId: "21167580479",
+        appId: "1:21167580479:web:053ac5e9af19eda519df8a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    <script src="index.js"></script>
+</body>
+</html>
