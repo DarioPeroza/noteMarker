@@ -31,12 +31,13 @@ async function writeTasks() {
     querySnapshot.forEach(doc => {
         let data = doc.data();
         let taskCard = `
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title fs-3">${data.title}</h5>
                 <p class="card-text fw-light">${data.description}</p>
             </div>
         </div>`;
+        
         tasksCards += taskCard;
     });
     tasksContainer.innerHTML = tasksCards;
@@ -61,6 +62,7 @@ async function readForm() {
 taskForm.saveButton.addEventListener("click", (e) => {
     e.preventDefault();
     readForm();
+    writeTasks();
 })
 
 taskForm.deleteButton.addEventListener("click", e => {
